@@ -1,0 +1,328 @@
+Id,HomeTeam,HomePoints,AwayTeam,AwayPoints
+401635525,Georgia Tech,24.0,Florida State,21.0
+401643697,New Mexico,31.0,Montana State,35.0
+401643696,Nevada,24.0,SMU,29.0
+401634206,Colorado,31.0,North Dakota State,26.0
+401628448,Minnesota,17.0,North Carolina,19.0
+401628453,Michigan State,16.0,Florida Atlantic,10.0
+401634300,Stanford,27.0,TCU,34.0
+401628333,Vanderbilt,34.0,Virginia Tech,27.0
+401644683,Northwestern,13.0,Miami (OH),6.0
+401628329,South Carolina,23.0,Old Dominion,19.0
+401641023,Middle Tennessee,32.0,Tennessee Tech,25.0
+401632064,Arkansas State,34.0,Central Arkansas,31.0
+401643701,Troy,26.0,Nevada,28.0
+401636613,Texas Tech,52.0,Abilene Christian,51.0
+401628459,Hawai'i,13.0,UCLA,16.0
+401643776,Texas State,34.0,Lamar,27.0
+401641007,Louisiana Tech,25.0,Nicholls,17.0
+401641032,New Mexico State,23.0,Southeast Missouri State,16.0
+401628334,LSU,20.0,USC,27.0
+401634765,SMU,15.0,BYU,18.0
+401635533,Northwestern,20.0,Duke,26.0
+401635534,Syracuse,31.0,Georgia Tech,28.0
+401636616,Tulane,27.0,Kansas State,34.0
+401628336,Oklahoma State,39.0,Arkansas,31.0
+401635538,Cincinnati,27.0,Pittsburgh,28.0
+401628470,Penn State,34.0,Bowling Green,27.0
+401634181,Ball State,42.0,Missouri State,34.0
+401644732,Kent State,17.0,St. Francis (PA),23.0
+401628465,Maryland,24.0,Michigan State,27.0
+401643710,Wyoming,13.0,Idaho,17.0
+401628464,Iowa,19.0,Iowa State,20.0
+401628337,Auburn,14.0,California,21.0
+401628977,Notre Dame,14.0,Northern Illinois,16.0
+401643781,Ohio,27.0,South Alabama,20.0
+401643778,Old Dominion,14.0,East Carolina,20.0
+401643777,James Madison,13.0,Gardner-Webb,6.0
+401643708,Nevada,17.0,Georgia Southern,20.0
+401628462,Illinois,23.0,Kansas,17.0
+401632459,Georgia State,24.0,Chattanooga,21.0
+401635639,Wake Forest,30.0,Virginia,31.0
+401643779,Arkansas State,28.0,Tulsa,24.0
+401628345,Oklahoma,16.0,Houston,12.0
+401632072,UTEP,24.0,Southern Utah,27.0
+401628469,Oregon,37.0,Boise State,34.0
+401640989,New Mexico State,24.0,Liberty,30.0
+401628343,Arizona State,30.0,Mississippi State,23.0
+401636867,Texas State,28.0,Arizona State,31.0
+401636863,Kansas,20.0,UNLV,23.0
+401635542,Florida State,12.0,Memphis,20.0
+401628359,South Carolina,33.0,LSU,36.0
+401628357,Missouri,27.0,Boston College,21.0
+401643786,Temple,20.0,Coastal Carolina,28.0
+401635547,Pittsburgh,38.0,West Virginia,34.0
+401628484,Washington,19.0,Washington State,24.0
+401643785,East Carolina,19.0,App State,21.0
+401629030,Duke,26.0,UConn,21.0
+401645327,Charlotte,27.0,Gardner-Webb,26.0
+401640999,Eastern Michigan,37.0,Jacksonville State,34.0
+401628362,Georgia State,36.0,Vanderbilt,32.0
+401628354,Kentucky,12.0,Georgia,13.0
+401636866,TCU,34.0,UCF,35.0
+401634766,Syracuse,24.0,Stanford,26.0
+401628485,Nebraska,24.0,Illinois,31.0
+401643714,Washington State,54.0,San José State,52.0
+401643791,Louisiana,33.0,Tulane,41.0
+401636879,West Virginia,32.0,Kansas,28.0
+401644735,Central Michigan,37.0,Ball State,34.0
+401628494,Virginia Tech,23.0,Rutgers,26.0
+401629042,Massachusetts,35.0,Central Connecticut,31.0
+401628489,Michigan,27.0,USC,24.0
+401644736,Northern Illinois,20.0,Buffalo,23.0
+401636877,Texas Tech,30.0,Arizona State,22.0
+401636876,Oklahoma State,19.0,Utah,22.0
+401628368,Missouri,30.0,Vanderbilt,27.0
+401628625,Florida International,42.0,Monmouth,45.0
+401641037,Western Kentucky,26.0,Toledo,21.0
+401635551,Florida State,14.0,California,9.0
+401641008,Louisiana Tech,20.0,Tulsa,23.0
+401628372,Texas A&M,26.0,Bowling Green,20.0
+401636874,Colorado,38.0,Baylor,31.0
+401628490,Boston College,23.0,Michigan State,19.0
+401634767,Miami,38.0,Virginia Tech,34.0
+401628501,Rutgers,21.0,Washington,18.0
+401628497,Michigan,27.0,Minnesota,24.0
+401628377,Ole Miss,17.0,Kentucky,20.0
+401635564,NC State,24.0,Northern Illinois,17.0
+401636880,Baylor,28.0,BYU,34.0
+401635560,Boston College,21.0,Western Kentucky,20.0
+401641041,Sam Houston,40.0,Texas State,39.0
+401629043,Miami (OH),23.0,Massachusetts,20.0
+401628373,Texas A&M,21.0,Arkansas,17.0
+401643721,Central Michigan,22.0,San Diego State,21.0
+401643794,Marshall,27.0,Western Michigan,20.0
+401628375,Auburn,21.0,Oklahoma,27.0
+401635659,Wake Forest,38.0,Louisiana,41.0
+401628980,Notre Dame,31.0,Louisville,24.0
+401635562,Duke,21.0,North Carolina,20.0
+401643795,Bowling Green,27.0,Old Dominion,30.0
+401640981,Florida International,17.0,Louisiana Tech,10.0
+401643796,Troy,9.0,UL Monroe,13.0
+401645333,Rice,20.0,Charlotte,21.0
+401628374,Alabama,41.0,Georgia,34.0
+401636884,Texas Tech,44.0,Cincinnati,41.0
+401634779,UNLV,41.0,Syracuse,44.0
+401635638,NC State,30.0,Wake Forest,34.0
+401635571,Louisville,27.0,SMU,34.0
+401644741,Ball State,42.0,Western Michigan,45.0
+401644740,Akron,20.0,Bowling Green,27.0
+401628508,Nebraska,14.0,Rutgers,7.0
+401628384,Vanderbilt,40.0,Alabama,35.0
+401643724,Oregon State,39.0,Colorado State,31.0
+401643800,Arkansas State,18.0,South Alabama,16.0
+401643798,Coastal Carolina,45.0,Old Dominion,37.0
+401643801,UL Monroe,21.0,James Madison,19.0
+401628507,Minnesota,24.0,USC,17.0
+401643726,San José State,35.0,Nevada,31.0
+401628379,Arkansas,19.0,Tennessee,14.0
+401643725,San Diego State,27.0,Hawai'i,24.0
+401636888,Arizona State,35.0,Kansas,31.0
+401635568,California,38.0,Miami,39.0
+401636887,Arizona,22.0,Texas Tech,28.0
+401640982,Liberty,31.0,Florida International,24.0
+401636892,Arizona State,27.0,Utah,19.0
+401635577,North Carolina,34.0,Georgia Tech,41.0
+401644743,Kent State,35.0,Ball State,37.0
+401628385,Alabama,27.0,South Carolina,25.0
+401635575,Pittsburgh,17.0,California,15.0
+401636895,UCF,13.0,Cincinnati,19.0
+401643805,Georgia State,14.0,Old Dominion,21.0
+401628511,Illinois,50.0,Purdue,49.0
+401635578,Virginia,20.0,Louisville,24.0
+401628516,USC,30.0,Penn State,33.0
+401643729,Colorado State,31.0,San José State,24.0
+401643732,Wyoming,24.0,San Diego State,27.0
+401644746,Central Michigan,25.0,Ohio,27.0
+401628391,Tennessee,23.0,Florida,17.0
+401645343,Florida Atlantic,37.0,North Texas,41.0
+401643730,Fresno State,17.0,Washington State,25.0
+401645344,Rice,29.0,UTSA,27.0
+401643731,Nevada,42.0,Oregon State,37.0
+401628388,LSU,29.0,Ole Miss,26.0
+401628515,Oregon,32.0,Ohio State,31.0
+401628387,Kentucky,13.0,Vanderbilt,20.0
+401643804,Georgia Southern,24.0,Marshall,23.0
+401635574,NC State,17.0,Syracuse,24.0
+401628514,UCLA,17.0,Minnesota,21.0
+401636894,Colorado,28.0,Kansas State,31.0
+401641010,New Mexico State,33.0,Louisiana Tech,30.0
+401634769,Duke,23.0,Florida State,16.0
+401636898,BYU,38.0,Oklahoma State,35.0
+401643735,Nevada,21.0,Fresno State,24.0
+401629034,UConn,20.0,Wake Forest,23.0
+401628524,Rutgers,32.0,UCLA,35.0
+401628395,Missouri,21.0,Auburn,17.0
+401635589,Louisville,45.0,Miami,52.0
+401644750,Eastern Michigan,38.0,Central Michigan,34.0
+401644749,Buffalo,41.0,Western Michigan,48.0
+401635587,California,23.0,NC State,24.0
+401644751,Northern Illinois,6.0,Toledo,13.0
+401628397,Tennessee,24.0,Alabama,17.0
+401628521,Maryland,29.0,USC,28.0
+401643737,Utah State,45.0,New Mexico,50.0
+401636900,Iowa State,38.0,UCF,35.0
+401645349,Memphis,52.0,North Texas,44.0
+401643734,Air Force,13.0,Colorado State,21.0
+401643739,Oregon State,25.0,UNLV,33.0
+401636903,Utah,7.0,TCU,13.0
+401640984,Florida International,7.0,Sam Houston,10.0
+401641011,Louisiana Tech,14.0,UTEP,10.0
+401640993,Kennesaw State,27.0,Liberty,24.0
+401634771,Boston College,27.0,Louisville,31.0
+401643740,UNLV,24.0,Boise State,29.0
+401628530,Ohio State,21.0,Nebraska,17.0
+401645354,North Texas,37.0,Tulane,45.0
+401645353,Memphis,33.0,Charlotte,28.0
+401643816,App State,33.0,Georgia State,26.0
+401635599,Stanford,24.0,Wake Forest,27.0
+401629035,UConn,17.0,Rice,10.0
+401645355,Tulsa,46.0,UTSA,45.0
+401636910,TCU,35.0,Texas Tech,34.0
+401644753,Ball State,25.0,Northern Illinois,23.0
+401644752,Akron,25.0,Eastern Michigan,21.0
+401628405,Vanderbilt,24.0,Texas,27.0
+401643745,Wyoming,25.0,Utah State,27.0
+401636905,Arizona,26.0,West Virginia,31.0
+401636908,Houston,17.0,Utah,14.0
+401643818,Arkansas State,34.0,Troy,31.0
+401628529,Michigan,24.0,Michigan State,17.0
+401636909,Kansas State,29.0,Kansas,27.0
+401635595,Duke,27.0,SMU,28.0
+401643744,San Diego State,26.0,Washington State,29.0
+401643820,Texas State,17.0,Louisiana,23.0
+401641012,Sam Houston,9.0,Louisiana Tech,3.0
+401629036,UConn,34.0,Georgia State,27.0
+401628533,Illinois,17.0,Minnesota,25.0
+401628538,Purdue,20.0,Northwestern,26.0
+401644758,Eastern Michigan,28.0,Toledo,29.0
+401635604,Syracuse,38.0,Virginia Tech,31.0
+401645359,UTSA,44.0,Memphis,36.0
+401628539,Penn State,13.0,Ohio State,20.0
+401643821,App State,28.0,Old Dominion,20.0
+401643822,Marshall,28.0,UL Monroe,23.0
+401641026,UTEP,13.0,Middle Tennessee,20.0
+401636914,Iowa State,22.0,Texas Tech,23.0
+401636913,Houston,24.0,Kansas State,19.0
+401628537,Nebraska,20.0,UCLA,27.0
+401643750,New Mexico,45.0,Wyoming,49.0
+401643749,Fresno State,20.0,Hawai'i,21.0
+401628540,Washington,26.0,USC,21.0
+401643823,South Alabama,30.0,Georgia Southern,34.0
+401636912,Baylor,37.0,TCU,34.0
+401644688,Ball State,21.0,Miami (OH),27.0
+401628542,UCLA,20.0,Iowa,17.0
+401645362,Memphis,27.0,Rice,20.0
+401643754,San Diego State,16.0,New Mexico,21.0
+401628544,Rutgers,26.0,Minnesota,19.0
+401635606,Boston College,37.0,Syracuse,31.0
+401635609,Georgia Tech,28.0,Miami,23.0
+401636918,Cincinnati,24.0,West Virginia,31.0
+401629037,UAB,23.0,UConn,31.0
+401628541,Indiana,20.0,Michigan,15.0
+401641021,UTEP,43.0,Kennesaw State,35.0
+401641004,Louisiana Tech,37.0,Jacksonville State,44.0
+401636917,Arizona State,35.0,UCF,31.0
+401628415,Missouri,30.0,Oklahoma,23.0
+401635610,Pittsburgh,19.0,Virginia,24.0
+401643752,Boise State,28.0,Nevada,21.0
+401643753,Hawai'i,27.0,UNLV,29.0
+401643751,Air Force,36.0,Fresno State,28.0
+401636922,Utah,21.0,BYU,22.0
+401644763,Buffalo,51.0,Ball State,48.0
+401645365,Tulsa,31.0,East Carolina,38.0
+401635582,Pittsburgh,20.0,Clemson,24.0
+401641013,Western Kentucky,7.0,Louisiana Tech,12.0
+401629046,Massachusetts,34.0,Liberty,35.0
+401645369,Temple,18.0,Florida Atlantic,15.0
+401640986,Jacksonville State,34.0,Florida International,31.0
+401635581,California,25.0,Syracuse,33.0
+401641022,Kennesaw State,17.0,Sam Houston,23.0
+401635517,Stanford,38.0,Louisville,35.0
+401643830,Georgia Southern,20.0,Troy,28.0
+401628549,USC,28.0,Nebraska,20.0
+401643833,Old Dominion,32.0,James Madison,35.0
+401628423,South Carolina,34.0,Missouri,30.0
+401643831,Georgia State,20.0,Arkansas State,27.0
+401643834,Louisiana,22.0,South Alabama,24.0
+401628551,Wisconsin,13.0,Oregon,16.0
+401635583,North Carolina,31.0,Wake Forest,24.0
+401643761,New Mexico,38.0,Washington State,35.0
+401636924,BYU,13.0,Kansas,17.0
+401644770,Central Michigan,16.0,Western Michigan,14.0
+401634772,Georgia Tech,30.0,NC State,29.0
+401628558,Michigan State,24.0,Purdue,17.0
+401628554,Rutgers,31.0,Illinois,38.0
+401628429,Florida,24.0,Ole Miss,17.0
+401635518,Syracuse,31.0,UConn,24.0
+401643839,Arkansas State,28.0,UL Monroe,21.0
+401640987,Kennesaw State,27.0,Florida International,26.0
+401636934,Oklahoma State,48.0,Texas Tech,56.0
+401636930,Arizona State,28.0,BYU,23.0
+401628559,Minnesota,25.0,Penn State,26.0
+401635613,California,24.0,Stanford,21.0
+401628572,Oregon State,41.0,Washington State,38.0
+401643764,Wyoming,13.0,Boise State,17.0
+401643842,Texas State,44.0,Georgia State,52.0
+401643838,Old Dominion,35.0,Marshall,42.0
+401636936,Utah,28.0,Iowa State,31.0
+401628428,Auburn,43.0,Texas A&M,41.0
+401628431,LSU,24.0,Vanderbilt,17.0
+401635615,Duke,31.0,Virginia Tech,28.0
+401628561,UCLA,13.0,USC,19.0
+401643763,Nevada,19.0,Air Force,22.0
+401643765,Fresno State,28.0,Colorado State,22.0
+401644775,Akron,21.0,Toledo,14.0
+401640997,Sam Houston,20.0,Liberty,18.0
+401643770,Colorado State,42.0,Utah State,37.0
+401643843,South Alabama,38.0,Texas State,45.0
+401635625,San José State,34.0,Stanford,31.0
+401628562,Iowa,13.0,Nebraska,10.0
+401628439,Georgia,44.0,Georgia Tech,42.0
+401645381,Temple,17.0,North Texas,24.0
+401628444,Clemson,14.0,South Carolina,17.0
+401628566,Ohio State,10.0,Michigan,13.0
+401645378,Army,29.0,UTSA,24.0
+401629038,Massachusetts,42.0,UConn,47.0
+401635622,Wake Forest,17.0,Duke,23.0
+401644780,Western Michigan,26.0,Eastern Michigan,18.0
+401645382,Rice,35.0,South Florida,28.0
+401643847,Arkansas State,32.0,Old Dominion,40.0
+401628570,UCLA,20.0,Fresno State,13.0
+401635624,North Carolina,30.0,NC State,35.0
+401645377,Charlotte,29.0,UAB,27.0
+401644779,Northern Illinois,24.0,Central Michigan,16.0
+401635623,Syracuse,42.0,Miami,38.0
+401628443,Missouri,28.0,Arkansas,21.0
+401641031,New Mexico State,35.0,UTEP,42.0
+401641006,Western Kentucky,19.0,Jacksonville State,17.0
+401636943,Cincinnati,13.0,TCU,20.0
+401643773,Washington State,14.0,Wyoming,15.0
+401636944,Iowa State,29.0,Kansas State,21.0
+401643846,James Madison,33.0,Marshall,35.0
+401643771,Hawai'i,38.0,New Mexico,30.0
+401673469,Texas,19.0,Georgia,22.0
+401673464,Oregon,45.0,Penn State,37.0
+401673463,SMU,31.0,Clemson,34.0
+401677077,Western Michigan,23.0,South Alabama,30.0
+401677080,West Virginia,37.0,Memphis,42.0
+401677082,Sam Houston,31.0,Georgia Southern,26.0
+401677083,Jacksonville State,27.0,Ohio,30.0
+401677086,Fresno State,20.0,Northern Illinois,28.0
+401677087,San José State,39.0,South Florida,41.0
+401677180,Toledo,48.0,Pittsburgh,46.0
+401677088,Kansas State,44.0,Rutgers,41.0
+401677089,Bowling Green,31.0,Arkansas State,38.0
+401677090,Navy,21.0,Oklahoma,20.0
+401677091,Vanderbilt,35.0,Georgia Tech,27.0
+401677093,USC,35.0,Texas A&M,31.0
+401677095,Nebraska,20.0,Boston College,15.0
+401677097,Miami,41.0,Iowa State,42.0
+401677098,NC State,21.0,East Carolina,26.0
+401677101,Missouri,27.0,Iowa,24.0
+401677102,Michigan,19.0,Alabama,13.0
+401677190,Washington,34.0,Louisville,35.0
+401677103,Illinois,21.0,South Carolina,17.0
+401677182,Arizona State,31.0,Texas,39.0
+401677106,Texas State,30.0,North Texas,28.0
+401677189,Penn State,24.0,Notre Dame,27.0
