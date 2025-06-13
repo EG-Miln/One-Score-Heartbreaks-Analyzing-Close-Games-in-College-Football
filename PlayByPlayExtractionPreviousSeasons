@@ -1,0 +1,54 @@
+## ONE-SCORE GAMES: PLAY-BY-PLAY EXTRACTION (2018-2023 FBS SEASON)
+
+## REMARK: 2020 SEASON NOT INCLUDED SINCE THIS WAS THE COVID-19 SEASON
+
+## THIS PROJECT WILL EXTRACT THE PLAY-BY-PLAYS FOR ALL ONE-SCORE GAMES PLAYED DURING THESE SEASONS
+
+import requests
+import pandas as pd
+
+# --- CONFIGURATION (YOU MAY NEED TO UPDATE ON YOUR COMPUTER) ---
+input_file = "C:/Users/lseminario/Downloads/gameIDsPreviousSeasons.csv"  # File containing game IDs
+base_output_path = "C:/Users/lseminario/Downloads/"
+Play_by_Play_Info = base_output_path + "all_play_by_plays_PreviousSeasons.xlsx"
+
+# --- LOAD GAME IDS ---
+df_ids = pd.read_csv(input_file, encoding='latin1')
+game_ids = df_ids['Id'].astype(str).tolist()
+
+# --- INIT STORAGE ---
+all_play_by_plays = []
+
+# --- PROCESS EACH GAME ---
+for game_id in game_ids:
+    print(f"Processing Game ID: {game_id}")
+    try:
+        url = f'https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event={game_id}'
+        response = requests.get(url)
+        data = response.json()
+        
+        # Extract drives and plays
+        plays = data.get('drives', {}).get('previous', [])
+        
+        for drive in plays:
+            for play in drive.get('plays', []):
+                play_data = {
+                    'game_id': game_id,
+                    'quarter': play.get('period', {}).get('number'),
+                    'clock': play.get('clock', {}).get('displayValue'),
+                    'downDistance': play.get('start', {}).get('downDistanceText'),
+                    'yardLine': play.get('start', {}).get('yardLineText'),
+                    'text': play.get('text'),
+                }
+                all_play_by_plays.append(play_data)
+
+    except Exception as e:
+        print(f"Error processing Game ID {game_id}: {e}")
+
+# --- BUILD DATAFRAME ---
+df_all = pd.DataFrame(all_play_by_plays)
+
+# --- EXPORT TO EXCEL ---
+with pd.ExcelWriter(Play_by_Play_Info) as writer:
+    df_all.to_excel(writer, index=False, sheet_name='Previous Seasons Play-by-Plays')
+
