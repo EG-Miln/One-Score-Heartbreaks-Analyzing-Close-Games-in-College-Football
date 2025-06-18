@@ -1,0 +1,105 @@
+## PREDICTIVE MODELING (PROTOTYPE)
+
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
+
+# FILE PATHS (MAY NEED TO BE UPDATED ON YOUR COMPUTER)
+winner_file = 'C:/Users/lseminario/Downloads/all_games_team_stats_winners_PreviousSeasons.xlsx'
+loser_file = 'C:/Users/lseminario/Downloads/all_games_team_stats_losers_PreviousSeasons.xlsx'
+test_file = 'C:/Users/lseminario/Downloads/all_games_team_stats_summary.xlsx'
+
+# LOAD TRAIN DATA (2018-2019, 2021-2023 FBS SEASONS)
+df_winners = pd.read_excel(winner_file)
+df_winners['Result'] = 1
+
+df_losers = pd.read_excel(loser_file)
+df_losers['Result'] = 0
+
+df_train = pd.concat([df_winners, df_losers], ignore_index=True)
+
+# LOAD TEST DATA (2024 FBS SEASON)
+df_test = pd.read_excel(test_file)
+
+# MAP TEST RESULT COLUMN (winner -> 1 ; loser -> 0)
+if df_test['Result'].dtype == object:
+    df_test['Result'] = df_test['Result'].map({'winner': 1, 'loser': 0})
+
+# FEATURE LIST (THERE ARE 11)
+feature_cols = [
+   'firstDowns', 'thirdDownEff', 'fourthDownEff', 'totalYards',
+    'netPassingYards', 'completionAttempts', 'yardsPerPass',
+    'rushingYards', 'Penalties', 'turnovers', 'possessionTime'
+]
+
+# FEATURE LIST (THERE ARE NOW 8)
+reduced_features = [
+    'firstDowns',
+    'totalYards',
+    'yardsPerPass',
+    'turnovers',
+    'possessionTime',
+    'rushingYards',
+    'thirdDownEff',
+    'completionAttempts'
+]
+
+# FUNCTION TO CONVERT possessionTime TO SECONDS 
+def convert_time_to_seconds(time_str):
+    """Convert MM:SS string to total seconds."""
+    try:
+        mins, secs = map(int, str(time_str).split(':'))
+        return mins * 60 + secs
+    except:
+        return None
+
+# APPLY TIME CONVERSION 
+df_train['possessionTime'] = df_train['possessionTime'].apply(convert_time_to_seconds)
+df_test['possessionTime'] = df_test['possessionTime'].apply(convert_time_to_seconds)
+
+# HANDLE MISSING VALUES 
+for col in reduced_features:
+    median_train = df_train[col].median()
+    median_test = df_test[col].median()
+    df_train[col] = df_train[col].fillna(median_train)
+    df_test[col] = df_test[col].fillna(median_test)
+
+# SET X AND y (ORIGINAL)
+# X_train = df_train[feature_cols]
+# y_train = df_train['Result']
+
+# X_test = df_test[feature_cols]
+# y_test = df_test['Result']
+
+# SET X AND y (NEW)
+X_train = df_train[reduced_features]
+y_train = df_train['Result']
+
+X_test = df_test[reduced_features]
+y_test = df_test['Result']
+
+# SCALE FEATURES 
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# TRAIN LOGISTIC REGRESSION 
+model = LogisticRegression(max_iter=1000, solver='lbfgs')
+model.fit(X_train_scaled, y_train)
+
+# PREDICT
+y_pred = model.predict(X_test_scaled)
+y_prob = model.predict_proba(X_test_scaled)[:,1]
+
+# EVALUATE 
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("Classification Report:\n", classification_report(y_test, y_pred))
+print("ROC AUC:", roc_auc_score(y_test, y_prob))
+
+# FEATURE IMPORTANCE 
+#importances = pd.Series(model.coef_[0], index=feature_cols)
+importances = pd.Series(model.coef_[0], index=reduced_features)
+print("\nFeature importance (logistic regression coefficients):")
+print(importances.sort_values(ascending=False))
