@@ -1,0 +1,87 @@
+## BOX PLOTS AND T-TESTS
+## DESCRIPTION: THIS PYTHON SCRIPT CREATES BOXPLOTS OF ALL THE TEAM STATS FROM THE FBS SEASONS PLAYED IN 2018, 2019, AND 2021-2023
+## A TWO-SAMPLE T TEST IS THEN CONDUCTED TO SEE WHICH TEAM STATS SIGNIFICANTLY CONTRIBUTED TO A TEAM WINNING A ONE-SCORE GAME
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.stats import ttest_ind
+
+# --- CONFIGURATION (YOU MAY NEED TO UPDATE ON YOUR COMPUTER) ---
+winner_file = 'C:/Users/lseminario/Downloads/all_games_team_stats_winners_PreviousSeasons.xlsx'
+loser_file = 'C:/Users/lseminario/Downloads/all_games_team_stats_losers_PreviousSeasons.xlsx'
+
+# --- READ EXCEL FILES
+winners_df = pd.read_excel(winner_file)
+losers_df = pd.read_excel(loser_file)
+
+# --- COLUMNS TO PREPARE
+columns = [
+    'Final Score', 
+    'firstDowns', 
+    'thirdDownEff', 
+    'fourthDownEff', 
+    'totalYards',
+    'netPassingYards', 
+    'completionAttempts', 
+    'yardsPerPass', 
+    'rushingYards',
+    'rushingAttempts', 
+    'yardsPerRushAttempt', 
+    'Penalties', 
+    'Penalty Yards',
+    'turnovers', 
+    'fumblesLost', 
+    'interceptions', 
+    'possessionTime'
+]
+
+# --- CONVERT possessionTime (e.g. "30:45") TO TOTAL SECONDS (e.g. "1845")
+def time_to_seconds(time_str):
+    if pd.isna(time_str):
+        return None
+    try:
+        minutes, seconds = map(int, str(time_str).split(':'))
+        return minutes * 60 + seconds
+    except:
+        return None
+
+# --- CONVERT possessionTime FOR WINNING AND LOSING TEAMS
+winners_df['possessionTime'] = winners_df['possessionTime'].apply(time_to_seconds)
+losers_df['possessionTime'] = losers_df['possessionTime'].apply(time_to_seconds)
+
+# --- CREATE BOXPLOT OF THE TEAM STATS (WINNERS VS. LOSERS)
+for col in columns:
+    plt.figure(figsize=(8, 6))
+    data = [winners_df[col].dropna(), losers_df[col].dropna()]
+    plt.boxplot(data, labels=['Winner', 'Loser'])
+    plt.title(f'Boxplot of {col}')
+    plt.ylabel(col)
+    plt.grid(True, linestyle='--', alpha=0.6)
+    plt.show()
+
+# --- HYPOTHESIS TESTING
+
+# --- STORE RESULTS: (col, t-statistic, right-tailed p-value)
+results = []
+
+# --- COMPUTE T-TESTS 
+for col in columns:
+    winner_data = winners_df[col].dropna()
+    loser_data = losers_df[col].dropna()
+
+    stat, p_value_two_tailed = ttest_ind(winner_data, loser_data, equal_var=False, nan_policy='omit')
+
+    # COMPUTE RIGHT-TAILED P-VALUE
+    if stat > 0:
+        p_value_right = p_value_two_tailed / 2
+    else:
+        p_value_right = 1 - p_value_two_tailed / 2
+
+    results.append((col, stat, p_value_right))
+
+# --- PRINT HYPOTHESIS TESTING RESULTS
+print("Right-tailed significance results (H0: Winner Team Stat <= Loser Team Stat; Ha: Winner Team Stat > Loser Team Stat)")
+print("The team stats that are statistically significant (since p-value < 0.05) are:")
+for col, stat, p in results:
+    if p < 0.05:
+        print(f"{col}: t = {stat:.4f}, right-tailed p-value = {p:.4f}")
