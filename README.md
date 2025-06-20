@@ -1,65 +1,49 @@
 # One-Score Heartbreaks: Analyzing Narrow Losses in College Football
-Public repository for an Erdos Institute Data Science Bootcamp team project.
+
+This is the public repository for our Erdos Institute Data Science Bootcamp team project.
 
 ## Data Set
-We are examining "one-score" games in college football. For the scope of this project, a "one-score" game is defined as a football game in which the final point differential is 8 points or fewer.
 
-**Examples of Final Scores in a One-Score Game in College Football:**
+We are analyzing *one-score* games in college football — games where the final point differential is **8 points or fewer**.
+
+**Examples of final scores in one-score games:**
 - 21–28  
 - 13–10  
-- 14–20
+- 14–20  
 
-Our dataset consists of the following components:
-- **Team Stats**: 3rd down efficiency, completions and attempts, turnovers, etc.
-- **Play-by-Play Information**: Detailed sequences of game events.
+One-score games occasionaly occur in college football and these can sometimes provide the most dramatic moments of the season. However, they can be particularly stressful for players, coaches, and fans alike.
 
-## Data Scraping Process
-We collected the data using the following steps:
+Our dataset includes:
+- **Team Stats:** 3rd down efficiency, completion attempts, turnovers, rushing yards, time of possession, and more.
 
-1. Downloaded Game IDs from multiple FBS seasons from [CollegeFootballData.com](https://collegefootballdata.com/).
+## Data Collection Process
+
+We gathered data using the following steps:
+1. Downloaded Game IDs for multiple FBS seasons from [CollegeFootballData.com](https://collegefootballdata.com/).
 2. Filtered for one-score games and saved the relevant Game IDs into a CSV file.
-3. Used Python scripts to scrape Team Stats and Play-by-Play data from the ESPN website using the filtered Game IDs.
-4. Saved the extracted data into separate Excel files for data analysis.
-
----
+3. Used Python scripts to scrape team stats from ESPN using these Game IDs.
+4. Saved the extracted data into Excel files for further analysis.
 
 ## Project Goals
 
-1. **Identify Stats Most Predictive of Winning (or Losing) Close Games**
-   - Use logistic regression or decision trees to assess feature importance.
-   - Focus on situational stats: 3rd/4th down conversion rates, turnover margin, etc.
+1. **Identify which team stats are most predictive of winning a one-score game**  
+   - Apply logistic regression to assess feature importance.
 
-2. **Predict the Winner of a One-Score Game**
-   - Build a predictive model using in-game and/or pre-game statistics.
-   - Consider features like yards per play, turnover margin, etc.
-
----
+2. **Predict the winner of a one-score game**  
+   - Build predictive models using in-game team stats.
+   - Focus on features like 3rd down efficiency, completion attempts, etc.
 
 ## Key Performance Indicators (KPIs)
-We have grouped our KPIs into the following categories:
 
-### Game-Level KPIs
-- Win-loss record in one-score games
-- Average scoring margin in one-score games
-- Number of comeback wins or blown leads
-
-### Situational Execution KPIs
-- 3rd and 4th down conversion rates
-- Turnovers (overall and 4th quarter-specific)
-- Time of possession in the 4th quarter
-- Penalties (frequency and yardage)
-
-### Coaching and Decision-Making KPIs
-- 4th down decision analysis (actual vs. optimal decisions)
-- Kicking decisions (field goal attempts vs. go-for-it situations)
+We are focusing on situational execution KPIs, including:
+- 3rd down conversion rates
+- Completion attempts
+- Yards per pass
+- Rushing yards
+- Time of possession
 
 ## Stakeholders
 
-1. **Coaching Staff**
-   - Improve in-game decision-making and situational awareness.
-
-2. **Athletic Departments**
-   - Evaluate coaching effectiveness and team performance in tight contests.
-
-3. **Football Players**
-   - Understand individual and team execution under high-pressure situations.
+- **Coaching Staff:** Gain insights to improve in-game decision-making and situational awareness.
+- **Athletic Departments:** Evaluate coaching effectiveness and team performance in close games.
+- **Football Players:** Better understand individual and team execution under high-pressure situations.
