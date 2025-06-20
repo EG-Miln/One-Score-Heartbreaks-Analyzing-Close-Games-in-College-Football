@@ -1,0 +1,74 @@
+## MULTICOLLINEARITY ANALYSIS
+## DESCRIPTION: PRODUCES A "HEAT" PLOT OF THE CORRELATION COEFFICIENT VALUES OF THE STATISTICALLY SIGNIFICANT FEATURES
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# --- CONFIGURATION (YOU MAY NEED TO UPDATE ON YOUR COMPUTER) ---
+winner_file = 'C:/Users/lseminario/Downloads/all_games_team_stats_winners_PreviousSeasons.xlsx'
+loser_file = 'C:/Users/lseminario/Downloads/all_games_team_stats_losers_PreviousSeasons.xlsx'
+
+# ---LOAD DATA
+df_winner = pd.read_excel(winner_file)
+df_loser = pd.read_excel(loser_file)
+
+# --- COMBINE DATA
+df_all = pd.concat([df_winner, df_loser], ignore_index=True)
+
+# --- CONVERT possessionTime (e.g. "30:45") TO TOTAL SECONDS (e.g. "1845")
+def time_to_seconds(time_str):
+    if pd.isna(time_str):
+        return np.nan
+    try:
+        minutes, seconds = map(int, str(time_str).split(':'))
+        return minutes * 60 + seconds
+    except:
+        return np.nan
+
+df_all['possessionTime'] = df_all['possessionTime'].apply(time_to_seconds)
+
+# --- SELECTED FEATURES BASED ON TWO-SAMPLE T-TESTS
+feature_cols = [ 
+    'Final Score', 
+    'firstDowns', 
+    'thirdDownEff', 
+    'totalYards',  
+    'completionAttempts', 
+    'yardsPerPass',  
+    'rushingYards', 
+    'rushingAttempts', 
+    'yardsPerRushAttempt', 
+    'possessionTime' 
+]
+
+df_features = df_all[feature_cols]
+
+# --- COMPUTE CORRELATION COEFFICIENTS AND PUT THEM INTO A MATRIX
+corr_matrix = df_features.corr()
+
+# --- "HEAT" PLOT OF CORRELATION COEFFICIENTS
+num_features = len(feature_cols)
+fig_width = max(8, num_features)       
+fig_height = fig_width * 0.75 + 2      
+
+plt.figure(figsize=(fig_width, fig_height))
+
+sns.heatmap(
+    corr_matrix, 
+    annot=True, 
+    fmt='.2f', 
+    cmap='coolwarm', 
+    cbar_kws={'shrink': 0.8},
+    annot_kws={"size": min(10, 300 // num_features)}
+)
+
+plt.title('Correlation of Features', fontsize=14, pad=12)
+plt.xticks(fontsize=9, rotation=45, ha='right')
+plt.yticks(fontsize=9, rotation=0)
+
+## GIVE EXTRA ROOM FOR THE LABELS ON THE HORIZONTAL AXIS
+plt.tight_layout(rect=[0, 0.1, 1, 0.95])
+
+plt.show()
