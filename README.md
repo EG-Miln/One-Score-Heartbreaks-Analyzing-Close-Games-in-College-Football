@@ -1,6 +1,8 @@
 # One-Score Heartbreaks: Analyzing Narrow Losses in College Football
 
-This is the public repository for our Erdos Institute Data Science Bootcamp team project.
+This is the public repository for our Erdos Institute Data Science Bootcamp team project (Summer 2025).
+
+Team Members: Lawrence Seminario-Romero, Alan Curtin, Jeremy Naredo
 
 ## Data Set
 
