@@ -17,15 +17,14 @@ This is the public repository for our **Erdos Institute Data Science Bootcamp** 
 ---
 
 ## Introduction
-
-In American football (or simply *football*), points are scored in the following ways:
+American football (or simply *football*) is a team sport in which two teams compete to score points by advancing the ball into the opponent's end zone or through kicking the ball through the goalposts (also known as the *uprights*). Points are scored in the following ways:
 - **Touchdown (6 points):** When a player carries or catches the ball in the opponent's end zone.
-- **Extra Point (1 point):** After a touchdown, the team may attempt to kick the ball through the uprights from the 3-yard line.
+- **Extra Point (1 point):** After a touchdown, the team may attempt to kick the ball through the uprights from the 3-yard line. The team gets only one extra point attempt per touchdown. 
 - **Two-Point Conversion (2 points):** After a touchdown, the team may attempt a single play from the 3-yard line to run or pass the ball into the end zone.
-- **Field Goal (3 points):** When the team kicks the ball through the uprights, typically on 4th down within reasonable range (often under 40 yards).
-- **Safety (2 points):** When the defense tackles an offensive player with the ball in their own end zone, or certain penalties occur there.
+- **Field Goal (3 points):** When the team attempts to kick the ball through the uprights. This is typically done on a 4th down scenario and the ball is placed within reasonable range from the uprights (often under 40 yards).
+- **Safety (2 points):** When the defense tackles an offensive player with the ball in their own end zone, or an offensive penalty occurs there.
 
-A game is typically considered *close* if the point differential is **8 points or fewer** — known as a *one-score game*. These games often deliver the most dramatic moments of a season and can be stressful for players, coaches, and fans alike.
+A football game is typically considered *close* if the point differential is **8 points or fewer**. These games are sometimes called *one-score games*, and often deliver the most dramatic moments of a season, as well as be stressful for players, coaches, and fans alike.
 
 **Examples of final scores in one-score games:**
 - 28–21  
