@@ -2,7 +2,7 @@ import pandas as pd
 
 #Save 2024 close games to 2024_close_game_ids.csv
 
-for year in [2018, 2019, 2021, 2023, 2024]:
+for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
     input_file = "NewDataFiles/" + str(year) + "_games.csv"  # File containing game IDs
     base_output_path = "NewDataFiles/"

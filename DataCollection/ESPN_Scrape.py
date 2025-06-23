@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 
-for year in [2018, 2019, 2021, 2023, 2024]:
+for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
     input_file = "NewDataFiles/" + str(year) + "_games.csv"  # File containing game IDs
 
 

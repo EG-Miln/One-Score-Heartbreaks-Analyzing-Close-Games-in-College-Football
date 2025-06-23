@@ -9,7 +9,7 @@ import pandas as pd
 from cfbdkey import * #CFBDKey() returns a string to be filled with a working API key to collegefootballdata.com
 
 
-for year in [2018, 2019, 2021, 2023, 2024]:
+for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
     headers = {
         'accept': 'application/json',

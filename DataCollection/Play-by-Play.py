@@ -11,7 +11,7 @@ import json
 
 
 
-for year in [2018]:#[2019, 2021, 2023, 2024]:
+for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
     input_file = "NewDataFiles/" + str(year) + "_closeGames.csv"  # File containing game IDs
     base_output_path = "NewDataFiles/"
@@ -132,7 +132,7 @@ for year in [2018]:#[2019, 2021, 2023, 2024]:
 
 
 
-for year in [2019, 2021, 2023, 2024]:
+for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
     input_file = "NewDataFiles/" + str(year) + "_games.csv"  # File containing game IDs
     base_output_path = "NewDataFiles/"
@@ -240,8 +240,8 @@ for year in [2019, 2021, 2023, 2024]:
     df_pbp = pd.DataFrame(all_play_by_plays)
     df_pbp.to_csv(base_output_path + str(year) + '_all_games_Play-by-Plays.csv')
 
-    df_stats = pd.DataFrame(all_team_stats)
-    df_stats.to_csv(base_output_path + str(year) + '_all_games_team_stats_summary.csv')
+    df_all = pd.DataFrame(all_team_stats)
+    df_all.to_csv(base_output_path + str(year) + '_all_games_team_stats_summary.csv')
 
     df_winners = df_all[df_all['Result'] == 'winner']
     df_winners.to_csv(base_output_path + str(year) + '_all_games_team_stats_winners.csv')
