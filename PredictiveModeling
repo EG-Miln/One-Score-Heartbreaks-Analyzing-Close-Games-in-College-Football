@@ -93,5 +93,5 @@ print("ROC AUC:", roc_auc_score(y_test, y_prob))
 
 # --- FEATURE IMPORTANCE 
 importances = pd.Series(model.coef_[0], index=feature_cols)
-print("\n Feature importance (logistic regression coefficients):")
+print("\n Logistic Regression Coefficients:")
 print(importances.sort_values(ascending=False))
