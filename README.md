@@ -11,7 +11,7 @@ This is the public repository for our **Erdos Institute Data Science Bootcamp** 
 - [Data Set](#data-set)  
 - [Data Collection Process](#data-collection-process)  
 - [Project Goals](#project-goals)  
-- [Key Performance Indicators (KPIs)](#key-performance-indicators-kpis)  
+- [Modeling Approaches](#modeling-approaches)  
 - [Stakeholders](#stakeholders)  
 
 ---
@@ -79,24 +79,20 @@ Upon identifying the team stats that were statistically significant, we analyzed
 
 <img alt="Alt text" src="Data Science Slides Pic 3.png">
 
-Upon of the figure, we came to the decision to utilize the following team stats to serve as the primary variables for our models.
+Upon of the figure, we came to the decision to utilize the following team stats to serve as the primary variables for our models. In particular, these are our key performance indicators (KPIs):
 - 3rd down efficiency
 - Completion attempts
 - Yards per pass
 - Rushing yards
 - Possession time
-These features are the most significant for predicting the outcome of a win for a one-score game in college football.
+
+These features are the most significant for predicting the outcome of a win for a one-score game in college football in the sense that they are related to situational execusion. 
 
 ---
 
-## Key Performance Indicators (KPIs)
+## Modeling Approaches
 
-We focused on KPIs related to situational execution, including:
-- 3rd down conversion rate  
-- Completion attempts  
-- Yards per pass  
-- Rushing yards  
-- Time of possession  
+
 
 ---
 
