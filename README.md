@@ -75,6 +75,17 @@ We obtained data for 17 different types of team stats. We had the data correspon
 
 <img alt="Alt text" src="Data Seicne Slides Pic 7.png">
 
+Upon identifying the team stats that were statistically significant, we analyzed multicollinearity to see narrow down the number of team stats that we would want to use in our preditive modeling. See figure below to examine the correlation of features.
+
+<img alt="Alt text" src="Data Science Slides Pic 3.png">
+
+Upon of the figure, we came to the decision to utilize the following team stats to serve as the primary variables for our models.
+- 3rd down efficiency
+- Completion attempts
+- Yards per pass
+- Rushing yards
+- Possession time
+These features are the most significant for predicting the outcome of a win for a one-score game in college football.
 
 ---
 
