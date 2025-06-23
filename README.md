@@ -66,6 +66,13 @@ Our data collection involved:
 
 ---
 
+## Data Analysis
+We obtained data for 17 different types of team stats. We had the data corresponding to these team stats for winning and losing teams of each one-score game. Since we are interested in determining which of these team stats were statistically significant between the winning and losing teams, we carried out the following a right-tailed two-sample t-test at the 5% significance level. The results of the hypothesis test suggested that there are 10 types of team stats that significantly mattered for teams that won a one-score game. See the screenshot below for the corresponding test statistic and p-value.
+
+
+
+---
+
 ## Key Performance Indicators (KPIs)
 
 We focused on KPIs related to situational execution, including:
