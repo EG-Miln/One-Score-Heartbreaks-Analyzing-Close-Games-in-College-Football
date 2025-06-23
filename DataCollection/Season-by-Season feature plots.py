@@ -50,8 +50,10 @@ for f in ['_close_games_team_stats_summary']:#['_close_games_team_stats_summary'
 
         chart_centered = centered_df[feature].plot(kind = 'bar', title = feature + " centered", rot = 45, )
         plt.show()
+        #plt.savefig("Plots/" + feature + " centered.png")
 
         chart = df[feature].plot(kind = 'bar', title = feature, rot = 45)
+        #plt.savefig("Plots/" + feature + ".png")
         plt.show()
 
         
