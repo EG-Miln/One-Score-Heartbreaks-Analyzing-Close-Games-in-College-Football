@@ -1,4 +1,4 @@
-# One-Score Heartbreaks: Analyzing Narrow Losses in College Football
+# One-Score Heartbreaks: Close Games in College Football
 
 This is the public repository for our **Erdos Institute Data Science Bootcamp** team project (Summer 2025).
 
