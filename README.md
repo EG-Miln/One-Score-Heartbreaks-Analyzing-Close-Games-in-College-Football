@@ -105,8 +105,12 @@ We utilized two different kinds of machine learning (ML) methods to predict the 
 ## Results
 - Logistic Regression Model: the following screenshot summarizes the performance of this ML method.
 <img alt="Alt text" src="Data Science Slides Pic 4.png">
-For this particular model, we had an overall accuracy of roughly 61%, which is a *modest* predictive performance on the test data. In other words, this model performs better than *random guessing* in a balanced data set. Furthemore, this model highlights that rushing yards, yards per pass, and possession time are the most influential predictors. Other features like completion attempts and third down efficiency do contribute, but not as strongly. While it is true (and to some degree obvious) that a team that wins one-score games is statistically expected to perform much better in these features, we should highlight that these features are key to increasing the likelhood of winning a close game. There are some limitations with this model. Namely, with ROC AUC being roughly 0.64, the model does not quite necessarily separate wins from losses fully. Furthermore, this model does not take into account situational factors that can arise from a game such as turnovers, red zone performance, or even the strength of an opponent. 
-- 
+For this particular model, we had an overall accuracy of roughly 61%, which is a *modest* predictive performance on the test data. In other words, this model performs better than *random guessing* in a balanced data set. Furthemore, this model highlights that rushing yards, yards per pass, and possession time are the most influential predictors. Other features like completion attempts and third down efficiency do contribute, but not as strongly. While it is true (and to some degree obvious) that a team that wins one-score games is statistically expected to perform much better in these features, we should highlight that these features are key to increasing the likelhood of winning a close game. There are some limitations with this model. Namely, with ROC AUC being roughly 0.64, the model does not quite necessarily separate wins from losses fully. Furthermore, this model does not take into account situational factors that can arise from a game such as turnovers, red zone performance, or even the strength of an opponent.
+
+- Random Forest Classification: the following screenshot summarizes the performance of this ML method.
+<img alt="Alt text" src="Data Science Slides Pic 7.png">
+
+<img alt="Alt text" src="Data Science Slides Pic 8.png">
 
 ---
 
