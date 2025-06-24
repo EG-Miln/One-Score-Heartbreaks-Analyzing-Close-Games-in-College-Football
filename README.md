@@ -73,9 +73,8 @@ Our data collection involved:
 
 We collected data on 17 types of team stats for winning and losing teams in one-score games. To identify which stats were most significant, we conducted right-tailed two-sample t-tests at the 5% significance level. The results suggested that 10 team stats showed statistically significant differences between winners and losers.
 
-<img alt="Boxplot example" src="Data Science Slides Pic 2.png">
+<img alt="Boxplot example" src="Slides/Data Science Slides Pic 2.png">
 <img alt="Boxplot example" src="Data Science Slides Pic 5.png">
-
 
 We then analyzed multicollinearity to narrow down our predictors for modeling. See the figure below for feature correlations:
 
