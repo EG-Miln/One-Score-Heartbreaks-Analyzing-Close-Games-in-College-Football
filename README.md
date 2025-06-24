@@ -1,49 +1,155 @@
-# One-Score Heartbreaks: Analyzing Narrow Losses in College Football
+# One-Score Heartbreaks: Analyzing Close Games in College Football
 
-This is the public repository for our Erdos Institute Data Science Bootcamp team project.
+This is the public repository for our **Erdos Institute Data Science Bootcamp** team project (Summer 2025).
+
+**Team Members:** Lawrence Seminario-Romero, Alan Curtin, Jeremy Naredo  
+
+---
+
+## Table of Contents  
+- [Introduction](#introduction)  
+- [Data Set](#data-set)  
+- [Data Collection Process](#data-collection-process)  
+- [Project Goals](#project-goals)  
+- [Data Analysis](#data-analysis)  
+- [Modeling Approaches](#modeling-approaches)
+- [Results](#results) 
+- [Stakeholders](#stakeholders)  
+
+---
+
+## Introduction
+American football (or simply *football*) is a team sport where two teams compete to score points by advancing the ball into the opponent's end zone or by kicking the ball through the goalposts (also known as the *uprights*). Points are scored as follows:
+- **Touchdown (6 points):** When a player carries or catches the ball in the opponent's end zone.
+- **Extra Point (1 point):** After a touchdown, the team may attempt a kick from the 3-yard line through the uprights.
+- **Two-Point Conversion (2 points):** After a touchdown, the team may attempt a single play from the 3-yard line to run or pass the ball into the end zone.
+- **Field Goal (3 points):** When the team kicks the ball through the uprights, typically on 4th down within reasonable distance (often under 40 yards).
+- **Safety (2 points):** When the defense tackles an offensive player with the ball in their own end zone, or an offensive penalty occurs there.
+
+A game is typically considered *close* if the final point differential is **8 points or fewer** — the maximum possible on a single possession (touchdown + two-point conversion). These *one-score games* often feature the most dramatic moments of a season.
+
+**Examples of one-score final scores:**
+- 28–21  
+- 10–13  
+- 20–14  
+
+---
 
 ## Data Set
 
-We are analyzing *one-score* games in college football — games where the final point differential is **8 points or fewer**.
+We are analyzing one-score games in **Division I FBS college football**. The dataset includes in-game team stats such as:
+- 3rd down efficiency  
+- Completion attempts  
+- Turnovers  
+- Yards gained  
+- Possession time  
+- And more  
 
-**Examples of final scores in one-score games:**
-- 21–28  
-- 13–10  
-- 14–20  
-
-One-score games occasionaly occur in college football and these can sometimes provide the most dramatic moments of the season. However, they can be particularly stressful for players, coaches, and fans alike.
-
-Our dataset includes:
-- **Team Stats:** 3rd down efficiency, completion attempts, turnovers, rushing yards, time of possession, and more.
+---
 
 ## Data Collection Process
 
-We gathered data using the following steps:
-1. Downloaded Game IDs for multiple FBS seasons from [CollegeFootballData.com](https://collegefootballdata.com/).
-2. Filtered for one-score games and saved the relevant Game IDs into a CSV file.
-3. Used Python scripts to scrape team stats from ESPN using these Game IDs.
-4. Saved the extracted data into Excel files for further analysis.
+Our data collection involved:
+1. **Downloading Game IDs and final scores** from [CollegeFootballData.com](https://collegefootballdata.com/) for FBS seasons in 2018, 2019, and 2021–2024.  
+   - We excluded 2020 due to COVID-19’s impact on team schedules and data reliability.
+2. **Filtering games** with a final point differential of 8 points or fewer.
+3. **Scraping team stats** for these games from ESPN using Python scripts and the filtered Game IDs.
+4. **Storing the data** in Excel files for further analysis and modeling.
+
+---
 
 ## Project Goals
 
-1. **Identify which team stats are most predictive of winning a one-score game**  
-   - Apply logistic regression to assess feature importance.
+1. **Identify which team stats are most predictive of winning a one-score game.**  
+   - We applied hypothesis testing (right-tailed two-sample t-tests) to identify statistically significant differences in the team stats of a one-score game between winning and losing teams.
 
-2. **Predict the winner of a one-score game**  
-   - Build predictive models using in-game team stats.
-   - Focus on features like 3rd down efficiency, completion attempts, etc.
+2. **Predict the winner of a one-score game.**  
+   - We built predictive models using logistic regression and random forest classifiers.
+   - Features included 3rd down efficiency, completion attempts, rushing yards, possession time, and more.
 
-## Key Performance Indicators (KPIs)
+---
 
-We are focusing on situational execution KPIs, including:
-- 3rd down conversion rates
+## Data Analysis
+
+We collected data on 17 types of team stats for winning and losing teams in one-score games. To identify which stats were most significant, we conducted right-tailed two-sample t-tests at the 5% significance level. The results suggested that 10 team stats showed statistically significant differences between winners and losers.
+
+<img alt="Boxplot example" src="Data Science Slides Pic 2.png">
+<img alt="Boxplot example" src="Data Science Slides Pic 5.png">
+
+
+We then analyzed multicollinearity to narrow down our predictors for modeling. See the figure below for feature correlations:
+
+<img alt="Correlation matrix" src="Data Science Slides Pic 3.png">
+
+Based on this analysis, our key performance indicators (KPIs) were:
+- 3rd down efficiency
 - Completion attempts
 - Yards per pass
 - Rushing yards
-- Time of possession
+- Possession time  
 
-## Stakeholders
+These features are most closely tied to situational execution in close games.
 
-- **Coaching Staff:** Gain insights to improve in-game decision-making and situational awareness.
-- **Athletic Departments:** Evaluate coaching effectiveness and team performance in close games.
-- **Football Players:** Better understand individual and team execution under high-pressure situations.
+---
+
+## Modeling Approaches
+
+We used two machine learning methods:
+- **Logistic Regression**
+- **Random Forest Classification**
+
+Our training data consisted of team stats from the 2018, 2019, and 2021–2023 FBS seasons. The 2024 season served as our test data.
+
+We evaluated model performance using:
+- Accuracy
+- Confusion matrix
+- Classification report
+- ROC AUC score
+- Feature importance / regression coefficients  
+
+---
+
+## Results
+
+### Logistic Regression  
+<img alt="Logistic Regression performance" src="Data Science Slides Pic 4.png">  
+
+- Accuracy: ~61% (modest predictive performance; better than random guessing on balanced data)
+
+- Most influential predictors: rushing yards, yards per pass, possession time
+  
+- Completion attempts and 3rd down efficiency contributed but were less influential
+  
+- ROC AUC: ~0.64 (some ability to separate wins from losses, but limited)
+  
+- Limitations: does not capture situational factors like turnovers, red zone efficiency, or opponent strength  
+
+---
+
+### Random Forest Classification  
+<img alt="Random Forest performance" src="Data Science Slides Pic 7.png">  
+
+- Accuracy: ~60% (similar to logistic regression)
+
+- Feature importance: completion attempts was more influential compared to logistic regression  
+<img alt="Feature importance" src="Data Science Slides Pic 8.png">
+
+- Strengths and weaknesses similar to logistic regression  
+
+---
+
+### Future Work  
+Future directions for this project could include:
+- Identifying features that consistently characterize teams that lose one-score games  
+- Performing hyperparameter tuning using grid search  
+- Applying cross-validation for more robust performance estimates  
+
+---
+
+## Stakeholders  
+
+- **Coaching Staff:** Insights to improve situational strategy and decision-making  
+- **Athletic Departments:** Metrics to evaluate coaching effectiveness and performance in close games  
+- **Players:** Better understanding of execution in high-pressure scenarios  
+
+---
