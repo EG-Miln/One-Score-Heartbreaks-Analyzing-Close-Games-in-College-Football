@@ -6,7 +6,7 @@
 
 import requests
 import pandas as pd
-from cfbdkey import * #CFBDKey() returns a string to be filled with a working API key to collegefootballdata.com
+from Functions.cfbdkey import * #CFBDKey() returns a string to be filled with a working API key to collegefootballdata.com
 
 
 for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
