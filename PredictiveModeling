@@ -43,8 +43,10 @@ if df_test['Result'].dtype == object:
 feature_cols = ['thirdDownEff', 
                 'completionAttempts', 
                 'yardsPerPass', 
-                'rushingYards', 
-                'possessionTime']
+                'rushingAttempts',
+                'yardsPerRushAttempt', 
+                'possessionTime',
+                'turnovers']
 
 # --- CONVERT possessionTime (e.g. "30:45") TO TOTAL SECONDS (e.g. "1845")
 def time_to_seconds(time_str):
