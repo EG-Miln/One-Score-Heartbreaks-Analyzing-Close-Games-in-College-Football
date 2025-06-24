@@ -11,7 +11,7 @@ def time_to_seconds(time_str):
 
 def features():
     #return ['thirdDownEff','completionAttempts', 'yardsPerPass', 'rushingYards', 'possessionTime']
-    return ['firstDowns','thirdDownEff','completionAttempts','yardsPerPass',  'rushingAttempts','turnovers'] #increases accuracy over above for logistic regression
+    return ['thirdDownEff','yardsPerPass', 'rushingAttempts', 'turnovers']
 
 def mergeWinnersLosers(winner_file, loser_file):
     df_winners = pd.read_csv(winner_file)
