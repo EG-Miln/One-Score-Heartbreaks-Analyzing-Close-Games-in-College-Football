@@ -103,14 +103,20 @@ We utilized two different kinds of machine learning (ML) methods to predict the 
 ---
 
 ## Results
-- Logistic Regression Model: the following screenshot summarizes the performance of this ML method.
+- **Logistic Regression Model:** the following screenshot summarizes the performance of this ML method.
 <img alt="Alt text" src="Data Science Slides Pic 4.png">
-For this particular model, we had an overall accuracy of roughly 61%, which is a *modest* predictive performance on the test data. In other words, this model performs better than *random guessing* in a balanced data set. Furthemore, this model highlights that rushing yards, yards per pass, and possession time are the most influential predictors. Other features like completion attempts and third down efficiency do contribute, but not as strongly. While it is true (and to some degree obvious) that a team that wins one-score games is statistically expected to perform much better in these features, we should highlight that these features are key to increasing the likelhood of winning a close game. There are some limitations with this model. Namely, with ROC AUC being roughly 0.64, the model does not quite necessarily separate wins from losses fully. Furthermore, this model does not take into account situational factors that can arise from a game such as turnovers, red zone performance, or even the strength of an opponent.
+For this predictive model, we had an overall accuracy of roughly 61%, which is a *modest* predictive performance on the test data. In other words, this model performs better than *random guessing* in a balanced data set. Furthemore, this model highlights that rushing yards, yards per pass, and possession time are the most influential predictors. Other features like completion attempts and third down efficiency do contribute, but not as strongly. While it is true (and to some degree obvious) that a team that wins one-score games is statistically expected to perform much better in these features, we should highlight that these features are key to increasing the likelhood of winning a close game. There are some limitations with this model. Namely, with ROC AUC being roughly 0.64, the model does not quite necessarily separate wins from losses fully. Furthermore, this model does not take into account situational factors that can arise from a game such as turnovers, red zone performance, or even the strength of an opponent.
 
-- Random Forest Classification: the following screenshot summarizes the performance of this ML method.
+- **Random Forest Classification:** the following screenshot summarizes the performance of this ML method.
 <img alt="Alt text" src="Data Science Slides Pic 7.png">
-
+For this predictive model, we had an overall acurracy of roughly 60%. Similar to the logistic regression model, we had a *modest* predictive peformance, but there was not really any significant improvement. Still this model does better than random guessing. The following screenshot provides a little more detail on the features importance.
 <img alt="Alt text" src="Data Science Slides Pic 8.png">
+Unlike the logistic regresison model, completion attempts was an influential predictor. In retrospect, modeling via random forest classification had similar strengths and weaknesses compared to logistic regression. 
+
+- **Future Work:** There are plenty of directions this work could go in, and we believe that this repository contains a lot of the nuts and bolts for additional projects. Some items that are of interest to investigate are thing such as:
+  1. Analyzing what are the features of importance that are consistent with teams that **lose** one-score games.
+  2. Implmenting a grid search for hyperparameter tuning.
+  3. Applying cross-validation in order to have a more robust model evaluation
 
 ---
 
