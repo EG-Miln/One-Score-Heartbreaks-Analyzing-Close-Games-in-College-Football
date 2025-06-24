@@ -74,11 +74,11 @@ Our data collection involved:
 We collected data on 17 types of team stats for winning and losing teams in one-score games. To identify which stats were most significant, we conducted right-tailed two-sample t-tests at the 5% significance level. The results suggested that 10 team stats showed statistically significant differences between winners and losers.
 
 <img alt="Boxplot example" src="Slides/Data Science Slides Pic 2.png">
-<img alt="Boxplot example" src="Data Science Slides Pic 5.png">
+<img alt="Boxplot example" src="Slides/Data Science Slides Pic 5.png">
 
 We then analyzed multicollinearity to narrow down our predictors for modeling. See the figure below for feature correlations:
 
-<img alt="Correlation matrix" src="Data Science Slides Pic 3.png">
+<img alt="Correlation matrix" src="Slides/Data Science Slides Pic 3.png">
 
 Based on this analysis, our key performance indicators (KPIs) were:
 - 3rd down efficiency
@@ -111,7 +111,7 @@ We evaluated model performance using:
 ## Results
 
 ### Logistic Regression  
-<img alt="Logistic Regression performance" src="Data Science Slides Pic 4.png">  
+<img alt="Logistic Regression performance" src="Slides/Data Science Slides Pic 4.png">  
 
 - Accuracy: ~61% (modest predictive performance; better than random guessing on balanced data)
 
@@ -126,12 +126,12 @@ We evaluated model performance using:
 ---
 
 ### Random Forest Classification  
-<img alt="Random Forest performance" src="Data Science Slides Pic 7.png">  
+<img alt="Random Forest performance" src="Slides/Data Science Slides Pic 7.png">  
 
 - Accuracy: ~60% (similar to logistic regression)
 
 - Feature importance: completion attempts was more influential compared to logistic regression  
-<img alt="Feature importance" src="Data Science Slides Pic 8.png">
+<img alt="Feature importance" src="Slides/Data Science Slides Pic 8.png">
 
 - Strengths and weaknesses similar to logistic regression  
 
