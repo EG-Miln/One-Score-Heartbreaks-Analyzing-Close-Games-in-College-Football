@@ -1,4 +1,4 @@
-# One-Score Heartbreaks: Close Games in College Football
+# One-Score Heartbreaks: Analyzing Close Games in College Football
 
 This is the public repository for our **Erdos Institute Data Science Bootcamp** team project (Summer 2025).
 
@@ -11,7 +11,8 @@ This is the public repository for our **Erdos Institute Data Science Bootcamp** 
 - [Data Set](#data-set)  
 - [Data Collection Process](#data-collection-process)  
 - [Project Goals](#project-goals)  
-- [Modeling Approaches](#modeling-approaches)  
+- [Modeling Approaches](#modeling-approaches)
+- [Results](#results) 
 - [Stakeholders](#stakeholders)  
 
 ---
@@ -92,13 +93,20 @@ These features are the most significant for predicting the outcome of a win for 
 
 ## Modeling Approaches
 
-We utilized two different kinds of machine learning methods to predict the outcome of a one-score game: logestic regression and random forest classification. The training data consisted of using the team stats associated with our KPIs for the 2018, 2019, and 2021-2023 FBS seasons. The team stats from te 2024 FBS season served as our test data. The following metrics were used to evaluate the performance of the model on the test data:
+We utilized two different kinds of machine learning (ML) methods to predict the outcome of a one-score game: logestic regression and random forest classification. The training data consisted of using the team stats associated with our KPIs for the 2018, 2019, and 2021-2023 FBS seasons. The team stats from te 2024 FBS season served as our test data. The following metrics were used to evaluate the performance of the model on the test data:
 - Accurary
 - Confusion matrix
 - Classification report
 - ROC AUC score
 - Regression coefficients
 
+---
+
+## Results
+- Logistic Regression Model: the following screenshot summarizes the performance of this ML method.
+<img alt="Alt text" src="Data Science Slides Pic 4.png">
+For this particular model, we had an overall accuracy of roughly 61%, which is a *modest* predictive performance on the test data. In other words, this model performs better than *random guessing* in a balanced data set. Furthemore, this model highlights that rushing yards, yards per pass, and possession time are the most influential predictors. Other features like completion attempts and third down efficiency do contribute, but not as strongly. While it is true (and to some degree obvious) that a team that wins one-score games is statistically expected to perform much better in these features, we should highlight that these features are key to increasing the likelhood of winning a close game. There are some limitations with this model. Namely, with ROC AUC being roughly 0.64, the model does not quite necessarily separate wins from losses fully. Furthermore, this model does not take into account situational factors that can arise from a game such as turnovers, red zone performance, or even the strength of an opponent. 
+- 
 
 ---
 
