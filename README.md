@@ -11,6 +11,7 @@ This is the public repository for our **Erdos Institute Data Science Bootcamp** 
 - [Data Set](#data-set)  
 - [Data Collection Process](#data-collection-process)  
 - [Project Goals](#project-goals)  
+- [Data Analysis](#data-analysis)  
 - [Modeling Approaches](#modeling-approaches)
 - [Results](#results) 
 - [Stakeholders](#stakeholders)  
@@ -18,16 +19,16 @@ This is the public repository for our **Erdos Institute Data Science Bootcamp** 
 ---
 
 ## Introduction
-American football (or simply *football*) is a team sport in which two teams compete to score points by advancing the ball into the opponent's end zone or through kicking the ball through the goalposts (also known as the *uprights*). Points are scored in the following ways:
+American football (or simply *football*) is a team sport where two teams compete to score points by advancing the ball into the opponent's end zone or by kicking the ball through the goalposts (also known as the *uprights*). Points are scored as follows:
 - **Touchdown (6 points):** When a player carries or catches the ball in the opponent's end zone.
-- **Extra Point (1 point):** After a touchdown, the team may attempt to kick the ball through the uprights from the 3-yard line. The team gets only one extra point attempt per touchdown. 
+- **Extra Point (1 point):** After a touchdown, the team may attempt a kick from the 3-yard line through the uprights.
 - **Two-Point Conversion (2 points):** After a touchdown, the team may attempt a single play from the 3-yard line to run or pass the ball into the end zone.
-- **Field Goal (3 points):** When the team attempts to kick the ball through the uprights. This is typically done on a 4th down scenario and the ball is placed within reasonable range from the uprights (often under 40 yards).
+- **Field Goal (3 points):** When the team kicks the ball through the uprights, typically on 4th down within reasonable distance (often under 40 yards).
 - **Safety (2 points):** When the defense tackles an offensive player with the ball in their own end zone, or an offensive penalty occurs there.
 
-A football game is typically considered *close* if the point differential is **8 points or fewer**. These games are sometimes called *one-score games*, and often deliver the most dramatic moments of a season, as well as be stressful for players, coaches, and fans alike.
+A game is typically considered *close* if the final point differential is **8 points or fewer** — the maximum possible on a single possession (touchdown + two-point conversion). These *one-score games* often feature the most dramatic moments of a season.
 
-**Examples of final scores in one-score games:**
+**Examples of one-score final scores:**
 - 28–21  
 - 10–13  
 - 20–14  
@@ -41,6 +42,7 @@ We are analyzing one-score games in **Division I FBS college football**. The dat
 - Completion attempts  
 - Turnovers  
 - Yards gained  
+- Possession time  
 - And more  
 
 ---
@@ -50,78 +52,97 @@ We are analyzing one-score games in **Division I FBS college football**. The dat
 Our data collection involved:
 1. **Downloading Game IDs and final scores** from [CollegeFootballData.com](https://collegefootballdata.com/) for FBS seasons in 2018, 2019, and 2021–2024.  
    - We excluded 2020 due to COVID-19’s impact on team schedules and data reliability.
-2. **Filtering games** where the final point differential was 8 points or fewer.
-3. **Scraping team stats** for these games from the ESPN website using Python scripts and the filtered Game IDs.
-4. **Storing the data** in Excel files for further analysis and predictive modeling.
+2. **Filtering games** with a final point differential of 8 points or fewer.
+3. **Scraping team stats** for these games from ESPN using Python scripts and the filtered Game IDs.
+4. **Storing the data** in Excel files for further analysis and modeling.
 
 ---
 
 ## Project Goals
 
-1. **Identify which team stats are most predictive of winning a one-score game**  
-   - We applied hypothesis testing (two-sample t-tests) to identify statistically significant differences between winning and losing teams.
+1. **Identify which team stats are most predictive of winning a one-score game.**  
+   - We applied hypothesis testing (right-tailed two-sample t-tests) to identify statistically significant differences between winning and losing teams.
 
-2. **Predict the winner of a one-score game**  
+2. **Predict the winner of a one-score game.**  
    - We built predictive models using logistic regression and random forest classifiers.
-   - Our features included 3rd down efficiency, completion attempts, turnovers, and more.
+   - Features included 3rd down efficiency, completion attempts, rushing yards, possession time, and more.
 
 ---
 
 ## Data Analysis
-We obtained data for 17 different types of team stats. We had the data corresponding to these team stats for winning and losing teams of each one-score game. Since we are interested in determining which of these team stats were statistically significant between the winning and losing teams, we carried out the following a right-tailed two-sample t-test at the 5% significance level. The results of the hypothesis test suggested that there are 10 types of team stats that significantly mattered for teams that won a one-score game. See the screenshot below for the corresponding test statistics and p-values, as well as some boxplots that compare specific team stats between the winner and losers of a one-score game.
 
-<img alt="Alt text" src="Data Science Slides Pic 2.png">
+We collected data on 17 types of team stats for winning and losing teams in one-score games. To identify which stats were most significant, we conducted right-tailed two-sample t-tests at the 5% significance level. The results suggested that 10 team stats showed statistically significant differences between winners and losers.
 
-<img alt="Alt text" src="Data Science Slides Pic 5.png">
+<img alt="Boxplot example" src="Data Science Slides Pic 2.png">
+<img alt="Boxplot example" src="Data Science Slides Pic 5.png">
+<img alt="Boxplot example" src="Data Science Slides Pic 7.png">
 
-<img alt="Alt text" src="Data Seicne Slides Pic 7.png">
+We then analyzed multicollinearity to narrow down our predictors for modeling. See the figure below for feature correlations:
 
-Upon identifying the team stats that were statistically significant, we analyzed multicollinearity to see narrow down the number of team stats that we would want to use in our preditive modeling. See figure below to examine the correlation of features.
+<img alt="Correlation matrix" src="Data Science Slides Pic 3.png">
 
-<img alt="Alt text" src="Data Science Slides Pic 3.png">
-
-Upon of the figure, we came to the decision to utilize the following team stats to serve as the primary variables for our models. In particular, these are our key performance indicators (KPIs):
+Based on this analysis, our key performance indicators (KPIs) were:
 - 3rd down efficiency
 - Completion attempts
 - Yards per pass
 - Rushing yards
-- Possession time
+- Possession time  
 
-These features are the most significant for predicting the outcome of a win for a one-score game in college football in the sense that they are related to situational execusion. 
+These features are most closely tied to situational execution in close games.
 
 ---
 
 ## Modeling Approaches
 
-We utilized two different kinds of machine learning (ML) methods to predict the outcome of a one-score game: logestic regression and random forest classification. The training data consisted of using the team stats associated with our KPIs for the 2018, 2019, and 2021-2023 FBS seasons. The team stats from te 2024 FBS season served as our test data. The following metrics were used to evaluate the performance of the model on the test data:
-- Accurary
+We used two machine learning methods:
+- **Logistic Regression**
+- **Random Forest Classification**
+
+Our training data consisted of team stats from the 2018, 2019, and 2021–2023 FBS seasons. The 2024 season served as our test data.
+
+We evaluated model performance using:
+- Accuracy
 - Confusion matrix
 - Classification report
 - ROC AUC score
-- Regression coefficients
+- Feature importance / regression coefficients  
 
 ---
 
 ## Results
-- **Logistic Regression Model:** the following screenshot summarizes the performance of this ML method.
-<img alt="Alt text" src="Data Science Slides Pic 4.png">
-For this predictive model, we had an overall accuracy of roughly 61%, which is a *modest* predictive performance on the test data. In other words, this model performs better than *random guessing* in a balanced data set. Furthemore, this model highlights that rushing yards, yards per pass, and possession time are the most influential predictors. Other features like completion attempts and third down efficiency do contribute, but not as strongly. While it is true (and to some degree obvious) that a team that wins one-score games is statistically expected to perform much better in these features, we should highlight that these features are key to increasing the likelhood of winning a close game. There are some limitations with this model. Namely, with ROC AUC being roughly 0.64, the model does not quite necessarily separate wins from losses fully. Furthermore, this model does not take into account situational factors that can arise from a game such as turnovers, red zone performance, or even the strength of an opponent.
 
-- **Random Forest Classification:** the following screenshot summarizes the performance of this ML method.
-<img alt="Alt text" src="Data Science Slides Pic 7.png">
-For this predictive model, we had an overall acurracy of roughly 60%. Similar to the logistic regression model, we had a *modest* predictive peformance, but there was not really any significant improvement. Still this model does better than random guessing. The following screenshot provides a little more detail on the features importance.
-<img alt="Alt text" src="Data Science Slides Pic 8.png">
-Unlike the logistic regresison model, completion attempts was an influential predictor. In retrospect, modeling via random forest classification had similar strengths and weaknesses compared to logistic regression. 
-
-- **Future Work:** There are plenty of directions this work could go in, and we believe that this repository contains a lot of the nuts and bolts for additional projects. Some items that are of interest to investigate are thing such as:
-  1. Analyzing what are the features of importance that are consistent with teams that **lose** one-score games.
-  2. Implmenting a grid search for hyperparameter tuning.
-  3. Applying cross-validation in order to have a more robust model evaluation
+### Logistic Regression  
+<img alt="Logistic Regression performance" src="Data Science Slides Pic 4.png">  
+- Accuracy: ~61% (modest predictive performance; better than random guessing on balanced data)
+- Most influential predictors: rushing yards, yards per pass, possession time  
+- Completion attempts and 3rd down efficiency contributed but were less influential  
+- ROC AUC: ~0.64 (some ability to separate wins from losses, but limited)
+- Limitations: does not capture situational factors like turnovers, red zone efficiency, or opponent strength  
 
 ---
 
-## Stakeholders
+### Random Forest Classification  
+<img alt="Random Forest performance" src="Data Science Slides Pic 7.png">  
+- Accuracy: ~60% (similar to logistic regression)
+- Feature importance: completion attempts was more influential compared to logistic regression  
+<img alt="Feature importance" src="Data Science Slides Pic 8.png">  
+- Strengths and weaknesses similar to logistic regression  
 
-- **Coaching Staff:** Insights to improve decision-making and situational strategies.  
-- **Athletic Departments:** Metrics for evaluating coaching effectiveness and team performance in close games.  
-- **Players:** Deeper understanding of team and individual execution under high-pressure conditions.  
+---
+
+### Future Work  
+Future directions for this project could include:
+- Identifying features that consistently characterize teams that lose one-score games  
+- Performing hyperparameter tuning using grid search  
+- Applying cross-validation for more robust performance estimates  
+
+---
+
+## Stakeholders  
+
+- **Coaching Staff:** Insights to improve situational strategy and decision-making  
+- **Athletic Departments:** Metrics to evaluate coaching effectiveness and performance in close games  
+- **Players:** Better understanding of execution in high-pressure scenarios  
+- **Analysts / Media:** Tools and insights to enhance commentary and analysis of close games  
+
+---
