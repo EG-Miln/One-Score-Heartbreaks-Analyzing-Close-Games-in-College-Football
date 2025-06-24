@@ -114,9 +114,13 @@ We evaluated model performance using:
 ### Logistic Regression  
 <img alt="Logistic Regression performance" src="Data Science Slides Pic 4.png">  
 - Accuracy: ~61% (modest predictive performance; better than random guessing on balanced data)
-- Most influential predictors: rushing yards, yards per pass, possession time  
-- Completion attempts and 3rd down efficiency contributed but were less influential  
+
+- Most influential predictors: rushing yards, yards per pass, possession time
+  
+- Completion attempts and 3rd down efficiency contributed but were less influential
+  
 - ROC AUC: ~0.64 (some ability to separate wins from losses, but limited)
+  
 - Limitations: does not capture situational factors like turnovers, red zone efficiency, or opponent strength  
 
 ---
@@ -124,8 +128,10 @@ We evaluated model performance using:
 ### Random Forest Classification  
 <img alt="Random Forest performance" src="Data Science Slides Pic 7.png">  
 - Accuracy: ~60% (similar to logistic regression)
+
 - Feature importance: completion attempts was more influential compared to logistic regression  
-<img alt="Feature importance" src="Data Science Slides Pic 8.png">  
+<img alt="Feature importance" src="Data Science Slides Pic 8.png">
+
 - Strengths and weaknesses similar to logistic regression  
 
 ---
@@ -143,6 +149,5 @@ Future directions for this project could include:
 - **Coaching Staff:** Insights to improve situational strategy and decision-making  
 - **Athletic Departments:** Metrics to evaluate coaching effectiveness and performance in close games  
 - **Players:** Better understanding of execution in high-pressure scenarios  
-- **Analysts / Media:** Tools and insights to enhance commentary and analysis of close games  
 
 ---
