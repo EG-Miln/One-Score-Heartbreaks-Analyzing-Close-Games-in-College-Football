@@ -14,11 +14,11 @@ from TrainingDataForSplits import *
 winner_file = 'NewDataFiles/past_seasons_close_games_team_stats_winners.csv'
 loser_file = 'NewDataFiles/past_seasons_close_games_team_stats_losers.csv'
 
-feature_cols = features()
+feature_cols = ['thirdDownEff','yardsPerPass', 'rushingAttempts', 'turnovers']
 X,y = GetXy(winner_file, loser_file, feature_cols)
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,random_state=216)#, stratify=y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2) #, stratify=y) #, random_state=216)
 
 
 
@@ -36,8 +36,8 @@ y_prob = model.predict_proba(X_test_scaled)[:,1]
 
 # --- EVALUATION
 print("Accuracy:", accuracy_score(y_test, y_pred))
-print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
-print("Classification Report:\n", classification_report(y_test, y_pred))
+#print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+#print("Classification Report:\n", classification_report(y_test, y_pred))
 print("ROC AUC:", roc_auc_score(y_test, y_prob))
 
 # --- FEATURE IMPORTANCE 
