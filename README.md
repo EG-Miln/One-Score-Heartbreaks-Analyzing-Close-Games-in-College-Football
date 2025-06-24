@@ -92,6 +92,12 @@ These features are the most significant for predicting the outcome of a win for 
 
 ## Modeling Approaches
 
+We utilized two different kinds of machine learning methods to predict the outcome of a one-score game: logestic regression and random forest classification. The training data consisted of using the team stats associated with our KPIs for the 2018, 2019, and 2021-2023 FBS seasons. The team stats from te 2024 FBS season served as our test data. The following metrics were used to evaluate the performance of the model on the test data:
+- Accurary
+- Confusion matrix
+- Classification report
+- ROC AUC score
+- Regression coefficients
 
 
 ---
