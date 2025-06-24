@@ -61,7 +61,7 @@ Our data collection involved:
 ## Project Goals
 
 1. **Identify which team stats are most predictive of winning a one-score game.**  
-   - We applied hypothesis testing (right-tailed two-sample t-tests) to identify statistically significant differences between winning and losing teams.
+   - We applied hypothesis testing (right-tailed two-sample t-tests) to identify statistically significant differences in the team stats of a one-score game between winning and losing teams.
 
 2. **Predict the winner of a one-score game.**  
    - We built predictive models using logistic regression and random forest classifiers.
@@ -75,7 +75,7 @@ We collected data on 17 types of team stats for winning and losing teams in one-
 
 <img alt="Boxplot example" src="Data Science Slides Pic 2.png">
 <img alt="Boxplot example" src="Data Science Slides Pic 5.png">
-<img alt="Boxplot example" src="Data Science Slides Pic 7.png">
+
 
 We then analyzed multicollinearity to narrow down our predictors for modeling. See the figure below for feature correlations:
 
