@@ -113,6 +113,7 @@ We evaluated model performance using:
 
 ### Logistic Regression  
 <img alt="Logistic Regression performance" src="Data Science Slides Pic 4.png">  
+
 - Accuracy: ~61% (modest predictive performance; better than random guessing on balanced data)
 
 - Most influential predictors: rushing yards, yards per pass, possession time
@@ -127,6 +128,7 @@ We evaluated model performance using:
 
 ### Random Forest Classification  
 <img alt="Random Forest performance" src="Data Science Slides Pic 7.png">  
+
 - Accuracy: ~60% (similar to logistic regression)
 
 - Feature importance: completion attempts was more influential compared to logistic regression  
