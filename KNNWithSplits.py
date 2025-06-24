@@ -29,19 +29,21 @@ X_test_scaled = scaler.transform(X_test)
 
 
 
-for k in range(1,10):
-    print("k = " + str(k))
-    model = KNeighborsClassifier(k)
+k = 3
+print("k = " + str(k))
+model = KNeighborsClassifier(k)
 
-    model.fit(X_train_scaled, y_train)
+model.fit(X_train_scaled, y_train)
 
-        # --- PREDICTION
-    y_pred = model.predict(X_test_scaled)
-    y_prob = model.predict_proba(X_test_scaled)[:,1]
+    # --- PREDICTION
+y_pred = model.predict(X_test_scaled)
+y_prob = model.predict_proba(X_test_scaled)[:,1]
 
-    acc = accuracy_score(y_test, y_pred)
-    print("Accuracy:", accuracy_score(y_test, y_pred))
-    print("ROC AUC:", roc_auc_score(y_test, y_prob))
-    #print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
-    #print("Classification Report:\n", classification_report(y_test, y_pred))
+acc = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("ROC AUC:", roc_auc_score(y_test, y_prob))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("Classification Report:\n", classification_report(y_test, y_pred))
+
+
 
