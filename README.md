@@ -130,11 +130,11 @@ We evaluated model performance using:
 ---
 
 ### Random Forest Classification  
-<img alt="Random Forest performance" src="Slides/Data Science Slides Pic 7.png">  
+<img alt="Random Forest performance" src="Slides/Random Forest Classification Info.png">  
 
 - Accuracy: ~64.5% (similar to logistic regression)
  
-<img alt="Feature importance" src="Slides/Data Science Slides Pic 8.png">
+<img alt="Feature importance" src="Slides/Random Forest Info 2.png">
 
 - Strengths and weaknesses similar to logistic regression  
 
