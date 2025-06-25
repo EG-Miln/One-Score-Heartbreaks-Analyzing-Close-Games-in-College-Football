@@ -1,11 +1,11 @@
-#Season-by-Season analysis
-
-#Shows our chosen factors year-by-year
+#Produces a plot statsitically significant features over time by plotting the mean of each season separately.
 
 import pandas as pd
 import matplotlib.pyplot as plt
 from Functions.TimeConverter import *
 
+
+path = 'CSV and Excel Files for Python Scripts/NewDataFiles/'
 
 feature_cols = [ 
     'Final Score', 
@@ -29,7 +29,7 @@ for f in ['_close_games_team_stats_summary']:#['_close_games_team_stats_summary'
 
 
     for season in seasonsList:
-        filename = "NewDataFiles/" + str(season) + f + ".csv"
+        filename = path + str(season) + f + ".csv"
 
         df = pd.read_csv(filename)
 

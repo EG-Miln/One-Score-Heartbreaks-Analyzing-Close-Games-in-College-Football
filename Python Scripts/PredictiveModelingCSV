@@ -19,9 +19,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
 
 # --- CONFIGURATION (YOU MAY NEED TO UPDATE ON YOUR COMPUTER) ---
-winner_file = 'NewDataFiles/past_seasons_close_games_team_stats_winners.csv'
-loser_file = 'NewDataFiles/past_seasons_close_games_team_stats_losers.csv'
-test_file = 'NewDataFiles/2024_close_games_team_stats_summary.csv'
+
+path = 'CSV and Excel Files for Python Scripts/NewDataFiles/'
+
+winner_file = path + 'past_seasons_close_games_team_stats_winners.csv'
+loser_file = path + 'past_seasons_close_games_team_stats_losers.csv'
+test_file = path + '2024_close_games_team_stats_summary.csv'
 
 # --- LOAD TRAINING DATA (FBS SEASONS FROM 2018, 2019, AND 2021-2023)
 df_winners = pd.read_csv(winner_file)

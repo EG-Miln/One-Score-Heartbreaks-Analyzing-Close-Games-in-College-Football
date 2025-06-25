@@ -5,12 +5,12 @@ import requests
 import pandas as pd
 import json
 
-
+path = 'CSV and Excel Files for Python Scripts/NewDataFiles/'
 
 for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
-    input_file = "NewDataFiles/" + str(year) + "_closeGames.csv"  # File containing game IDs
-    base_output_path = "NewDataFiles/"
+    input_file = path + str(year) + "_closeGames.csv"  # File containing game IDs
+    base_output_path = path
 
     # --- LOAD GAME IDS ---
     df = pd.read_csv(input_file)
@@ -23,7 +23,7 @@ for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
     for game_id in df['id']:
         print(f"Processing Game ID: {game_id}")
 
-        with open("NewDataFiles/ESPN/" +str(game_id) + '.json', 'r') as f:
+        with open(path + "ESPN/" +str(game_id) + '.json', 'r') as f:
             data = json.load(f)
         
 
@@ -46,8 +46,8 @@ for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
 for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
-    input_file = "NewDataFiles/" + str(year) + "_games.csv"  # File containing game IDs
-    base_output_path = "NewDataFiles/"
+    input_file = path + str(year) + "_games.csv"  # File containing game IDs
+    base_output_path = path
 
     # --- LOAD GAME IDS ---
     df = pd.read_csv(input_file)
@@ -60,7 +60,7 @@ for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
     for game_id in df['id']:
         print(f"Processing Game ID: {game_id}")
 
-        with open("NewDataFiles/ESPN/" +str(game_id) + '.json', 'r') as f:
+        with open(path + "ESPN/" +str(game_id) + '.json', 'r') as f:
             data = json.load(f)
         
 

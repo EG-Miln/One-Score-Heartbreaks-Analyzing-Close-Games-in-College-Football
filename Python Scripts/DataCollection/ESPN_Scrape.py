@@ -1,10 +1,12 @@
+#Obtains details of each game from ESPN and saves it for further use
+
 import requests
 import pandas as pd
 import json
 
-
+path = 'CSV and Excel Files for Python Scripts/NewDataFiles/'
 for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
-    input_file = "NewDataFiles/" + str(year) + "_games.csv"  # File containing game IDs
+    input_file = path + str(year) + "_games.csv"  # File containing game IDs
 
 
     # --- LOAD GAME IDS ---
@@ -18,7 +20,7 @@ for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
             response = requests.get(url)
             data = response.json()
 
-            with open("NewDataFiles/ESPN/" + str(game_id) + ".json", 'w') as json_file:
+            with open(path + "ESPN/" + str(game_id) + ".json", 'w') as json_file:
                 json.dump(data, json_file)
             
             

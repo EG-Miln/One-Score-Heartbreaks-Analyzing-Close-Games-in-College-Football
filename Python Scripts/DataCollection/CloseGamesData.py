@@ -1,11 +1,14 @@
+#Saves the list of close games each season to a separate csv from the list of all games.
+
+
 import pandas as pd
 
-#Save 2024 close games to 2024_close_game_ids.csv
+path = 'CSV and Excel Files for Python Scripts/NewDataFiles/'
 
 for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
-    input_file = "NewDataFiles/" + str(year) + "_games.csv"  # File containing game IDs
-    base_output_path = "NewDataFiles/"
+    input_file = path + str(year) + "_games.csv"  # File containing game IDs
+    base_output_path = path
 
 
 

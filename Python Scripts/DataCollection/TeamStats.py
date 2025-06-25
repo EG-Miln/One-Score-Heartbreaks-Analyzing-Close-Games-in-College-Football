@@ -1,20 +1,16 @@
 
-#Reads in close games then all games files and outputs play-by-plays by the season
-
-
-
-
+#Parses ESPN game data and saves the stats we are interested in for further testing for significance
 
 import requests
 import pandas as pd
 import json
 
-
+path = 'CSV and Excel Files for Python Scripts/NewDataFiles/'
 
 for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
-
-    input_file = "NewDataFiles/" + str(year) + "_closeGames.csv"  # File containing game IDs
-    base_output_path = "NewDataFiles/"
+    print(year)
+    input_file = path + str(year) + "_closeGames.csv"  # File containing game IDs
+    base_output_path = path
 
     # --- LOAD GAME IDS ---
     df = pd.read_csv(input_file)
@@ -25,27 +21,11 @@ for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
     # --- PROCESS EACH GAME ---
     for game_id in df['id']:
-        print(f"Processing Game ID: {game_id}")
+    #    print(f"Processing Game ID: {game_id}")
 
-        with open("NewDataFiles/ESPN/" +str(game_id) + '.json', 'r') as f:
+        with open(path + "ESPN/" +str(game_id) + '.json', 'r') as f:
             data = json.load(f)
         
-
-        plays = data.get('drives', {}).get('previous', [])
-            
-        for drive in plays:
-            for play in drive.get('plays', []):
-                play_data = {
-                    'game_id': game_id,
-                    'quarter': play.get('period', {}).get('number'),
-                    'clock': play.get('clock', {}).get('displayValue'),
-                    'downDistance': play.get('start', {}).get('downDistanceText'),
-                    'yardLine': play.get('start', {}).get('yardLineText'),
-                    'text': play.get('text'),
-                }
-                all_play_by_plays.append(play_data)
-
-
         # Build team lookup from "competitors"
             competitors = data.get("header", {}).get("competitions", [{}])[0].get("competitors", [])
             team_lookup = {
@@ -114,10 +94,6 @@ for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
                             pass
 
                 all_team_stats.append(team_dict)
-
-
-    df_pbp = pd.DataFrame(all_play_by_plays)
-    df_pbp.to_csv(base_output_path + str(year) + '_close_games_Play-by-Plays.csv')
 
     df_all = pd.DataFrame(all_team_stats)
     df_all.to_csv(base_output_path + str(year) + '_close_games_team_stats_summary.csv')
@@ -133,9 +109,9 @@ for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
 
 for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
-
-    input_file = "NewDataFiles/" + str(year) + "_games.csv"  # File containing game IDs
-    base_output_path = "NewDataFiles/"
+    print(year)
+    input_file = path + str(year) + "_games.csv"  # File containing game IDs
+    base_output_path = path
 
     # --- LOAD GAME IDS ---
     df = pd.read_csv(input_file)
@@ -146,26 +122,11 @@ for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
     # --- PROCESS EACH GAME ---
     for game_id in df['id']:
-        print(f"Processing Game ID: {game_id}")
+    #    print(f"Processing Game ID: {game_id}")
 
-        with open("NewDataFiles/ESPN/" +str(game_id) + '.json', 'r') as f:
+        with open(path + "ESPN/" +str(game_id) + '.json', 'r') as f:
             data = json.load(f)
         
-
-        plays = data.get('drives', {}).get('previous', [])
-            
-        for drive in plays:
-            for play in drive.get('plays', []):
-                play_data = {
-                    'game_id': game_id,
-                    'quarter': play.get('period', {}).get('number'),
-                    'clock': play.get('clock', {}).get('displayValue'),
-                    'downDistance': play.get('start', {}).get('downDistanceText'),
-                    'yardLine': play.get('start', {}).get('yardLineText'),
-                    'text': play.get('text'),
-                }
-                all_play_by_plays.append(play_data)
-
 
         # Build team lookup from "competitors"
             competitors = data.get("header", {}).get("competitions", [{}])[0].get("competitors", [])
@@ -236,9 +197,6 @@ for year in [2018, 2019, 2020, 2021, 2022, 2023, 2024]:
 
                 all_team_stats.append(team_dict)
 
-
-    df_pbp = pd.DataFrame(all_play_by_plays)
-    df_pbp.to_csv(base_output_path + str(year) + '_all_games_Play-by-Plays.csv')
 
     df_all = pd.DataFrame(all_team_stats)
     df_all.to_csv(base_output_path + str(year) + '_all_games_team_stats_summary.csv')
