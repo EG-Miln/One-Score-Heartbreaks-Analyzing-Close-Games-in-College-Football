@@ -1,3 +1,7 @@
+#This file contains methods that prepares data from past seasons (excluding 2024) to be split further into testing and training data.
+
+
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 

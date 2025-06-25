@@ -1,4 +1,4 @@
-#KNN classification underperforms logistic regression
+#KNN classification underperforms logistic regression with an accuracy of 0.58 or worse at k<10
 
 from sklearn.model_selection import train_test_split
 import pandas as pd
@@ -11,10 +11,10 @@ from sklearn.pipeline import Pipeline
 
 
 from TrainingDataForSplits import *
+path = 'CSV and Excel Files for Python Scripts/NewDataFiles/'
 
-
-winner_file = 'NewDataFiles/past_seasons_close_games_team_stats_winners.csv'
-loser_file = 'NewDataFiles/past_seasons_close_games_team_stats_losers.csv'
+winner_file = path + 'past_seasons_close_games_team_stats_winners.csv'
+loser_file = path + 'past_seasons_close_games_team_stats_losers.csv'
 
 
 feature_cols = features()

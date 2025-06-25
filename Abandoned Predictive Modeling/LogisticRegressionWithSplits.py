@@ -1,3 +1,5 @@
+#abandoned logistic regression model with 0.6666 accuracy and 0.7129 ROC AUC
+
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
@@ -10,9 +12,13 @@ from sklearn.pipeline import Pipeline
 
 from TrainingDataForSplits import *
 
-# --- CONFIGURATION (YOU MAY NEED TO UPDATE ON YOUR COMPUTER) ---
-winner_file = 'NewDataFiles/past_seasons_close_games_team_stats_winners.csv'
-loser_file = 'NewDataFiles/past_seasons_close_games_team_stats_losers.csv'
+
+
+
+path = 'CSV and Excel Files for Python Scripts/NewDataFiles/'
+
+winner_file = path + 'past_seasons_close_games_team_stats_winners.csv'
+loser_file = path + 'past_seasons_close_games_team_stats_losers.csv'
 
 feature_cols = ['thirdDownEff','yardsPerPass', 'rushingAttempts', 'turnovers']
 X,y = GetXy(winner_file, loser_file, feature_cols)
@@ -47,7 +53,7 @@ y_prob = model.predict_proba(X_test_scaled)[:,1]
 
 print("outputting final test results")
 
-df_test = pd.read_csv('NewDataFiles/2024_close_games_team_stats_summary.csv')
+df_test = pd.read_csv(path + '2024_close_games_team_stats_summary.csv')
 if df_test['Result'].dtype == object:
     df_test['Result'] = df_test['Result'].map({'winner': 1, 'loser': 0})
 

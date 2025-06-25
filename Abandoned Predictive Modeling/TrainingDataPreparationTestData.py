@@ -1,5 +1,7 @@
-import pandas as pd
+#This file contains methods that prepares data from past seasons (excluding 2024) to be used as training data and data from the 2024 season to be used as testing data for our final model.
+#These methods were used in creating our final model without calling this file.
 
+import pandas as pd
 
     # --- CONVERT possessionTime (e.g. "30:45") TO TOTAL SECONDS (e.g. "1845")
 def time_to_seconds(time_str):

@@ -1,3 +1,4 @@
+#Quick attempt at sorting through features
 #Looks at subsets of key features and maximizes accuracy
 #Looks at subsets of key features and maximizes ROC AUC
 
@@ -15,9 +16,10 @@ import itertools
 
 from TrainingDataForSplits import *
 
+path = 'CSV and Excel Files for Python Scripts/NewDataFiles/'
 
-winner_file = 'NewDataFiles/past_seasons_close_games_team_stats_winners.csv'
-loser_file = 'NewDataFiles/past_seasons_close_games_team_stats_losers.csv'
+winner_file = path + 'past_seasons_close_games_team_stats_winners.csv'
+loser_file = path + 'past_seasons_close_games_team_stats_losers.csv'
 
 feature_cols = ['firstDowns', 
     'thirdDownEff', 
