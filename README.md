@@ -84,8 +84,10 @@ Based on this analysis, our key performance indicators (KPIs) were:
 - 3rd down efficiency
 - Completion attempts
 - Yards per pass
-- Rushing yards
-- Possession time  
+- Rushing attempts
+- Yards per rush attempt
+- Possession time
+- Turnovers --- while this team stat was not statistically significant for teams that won a one-score game, this is a very important metric that we do want to account for because this statistic is associated with the loss of a possession, which to some degree significantly affects the outcome of a game. 
 
 These features are most closely tied to situational execution in close games.
 
