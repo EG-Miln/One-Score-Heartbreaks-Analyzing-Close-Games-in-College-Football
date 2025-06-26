@@ -152,6 +152,7 @@ Future directions for this project could include:
 
 - **Coaching Staff:** Insights to improve situational strategy and decision-making  
 - **Athletic Departments:** Metrics to evaluate coaching effectiveness and performance in close games  
-- **Players:** Better understanding of execution in high-pressure scenarios  
+- **Players:** Better understanding of execution in high-pressure scenarios
+- **College Football Fans:** Learn more about the factors associated with one-score games, as well as have a perspective of their respective teams' peformance from a data driven view
 
 ---
